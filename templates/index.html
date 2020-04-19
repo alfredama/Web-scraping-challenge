@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ltest Mars Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to MARS</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Lets gooooo!</a></p>
+    </div>
+
+    <!-- Craigslist Listings -->
+    <div class="row" id="first row">
+      <div class="col-md-12">
+        <h2>Latest MARS NEWS</h2>
+        <h2 class="heading">{{latest_info.latest_title}} </h2>
+        <p>{{latest_info.latest_Paragraph}}</p>
+      </div>
+    </div>
+    <div class = "row" id="second_row">
+      <div class="col-md-8">
+        <div class = "thumbnail">
+          <h3>Featured Mars Image</h3>
+          <img src="{{latest_info.latest_image_url}}" height="40" alt="Smiley">
+        </div> 
+      </div>
+
+        <div class="col-md-4">
+          <h3>Current Weather on Mars</h3>
+          <p>{{latest_info.Mars_tweet}}</p>
+          <br>
+          <h3>Mars Facts</h3>
+          <table>{{latest_info.html_file | safe}}</table>
+        </div>
+    </div>
+    <div class = "row" id="third_row">
+      <div class="col-md-12">
+        <h3>Mars Hemishperes</h3>
+          <div class = "col-md-6">
+            <div class = "thumbnail">
+               <img src ={{latest_info.Image_url0}} alt="Smiley">
+               <p>{{latest_info.Title0}}</p>
+               <br> 
+               <img src ={{latest_info.Image_url1}} alt="Smiley">
+               <p>{{latest_info.Title1}}</p>
+            </div>
+          </div>
+
+          <div class = "col-md-6">
+            <div class = "thumbnail">
+               <img src ={{latest_info.Image_url2}} alt="Smiley">
+               <p>{{latest_info.Title2}}</p>
+               <br> 
+               <img src ={{latest_info.Image_url3}} alt="Smiley">
+               <p>{{latest_info.Title3}}</p>
+            </div>
+        </div>
+      </div>
+    </div> 
+
+
+
+
+  </div>
+</body>
+
+</html>
+
